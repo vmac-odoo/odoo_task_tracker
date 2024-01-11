@@ -64,7 +64,7 @@ def run(
             config_data.user if not user else user,
             config_data.password if not password else password,
             config_data.search,
-            config_data.search_limit if search_limit else search_limit,
+            config_data.search_limit if not search_limit else search_limit,
         ).run_service()
     except:
         typer.secho(
@@ -91,7 +91,7 @@ def init(
             fg=typer.colors.RED,
         )
         raise typer.Exit(1)
-    db_init_error = database.Database.init_database(Path(db_path))
+    db_init_error = database.DatabaseHandler.init_database(Path(db_path))
     if db_init_error:
         typer.secho(
             f'Creating database failed with "{ERRORS[db_init_error]}"',

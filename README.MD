@@ -31,6 +31,18 @@ python -m odoo_task_tracker init
 ```console
 python -m odoo_task_tracker run
 ```
+5. Override odoo_task.sh with your own path (Optional)
+6. Add to .zshrc or .bash and give it rights (Optional)
+```console
+# odoo_task_tracker
+alias odoo_task_tracker='/Users/nefonfo/odoo/task_tracker_project/odoo_task.sh'
+```
+```bash
+source ~/.zshsrc
+```
+```bash
+chmod +x /Users/nefonfo/odoo/task_tracker_project/odoo_task.sh
+```
 
 ### JSON definition
 - user: your email
